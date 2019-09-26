@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/viewGithub"
+        android:title="@string/viewGithub">
+    </item>
+    <item
+        android:id="@+id/actionAdd"
+        android:title="@string/actionAddEntry">
+    </item>
+    <item
+        android:id="@+id/autoScroll"
+        android:checkable="true"
+        android:title="@string/autoScroll">
+    </item>
+    <item
+        android:id="@+id/actionFeedMultiple"
+        android:title="@string/actionFeedMultiple">
+    </item>
+    <item
+        android:id="@+id/actionSave"
+        android:title="@string/actionSave">
+    </item>
+
+</menu>

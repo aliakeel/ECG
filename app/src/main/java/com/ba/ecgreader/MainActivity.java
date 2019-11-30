@@ -1585,7 +1585,7 @@ int i=0,xx=100;
         xRangeVisble+=5;
         if(xRangeVisble >= chart.getData().getEntryCount() )
             xRangeVisble = chart.getData().getEntryCount();
-        //chart.setVisibleXRangeMaximum(xRangeVisble);
+        // /*jhj*/    chart.setVisibleXRangeMaximum(xRangeVisble);
     }
 
 

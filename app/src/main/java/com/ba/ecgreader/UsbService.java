@@ -93,7 +93,7 @@ public class UsbService extends Service {
                         sync.produce(data);
                     } catch (Exception e) {
                     }
-                    list.add(data);
+//                    list.add(data);
                 }
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
@@ -223,11 +223,11 @@ public class UsbService extends Service {
             // first, dump the hashmap for diagnostic purposes
             for (Map.Entry<String, UsbDevice> entry : usbDevices.entrySet()) {
                 device = entry.getValue();
-                Log.d(TAG, String.format("USBDevice.HashMap (vid:pid) (%X:%X)-%b class:%X:%X name:%s",
-                        device.getVendorId(), device.getProductId(),
-                        UsbSerialDevice.isSupported(device),
-                        device.getDeviceClass(), device.getDeviceSubclass(),
-                        device.getDeviceName()));
+//                Log.d(TAG, String.format("USBDevice.HashMap (vid:pid) (%X:%X)-%b class:%X:%X name:%s",
+//                        device.getVendorId(), device.getProductId(),
+//                        UsbSerialDevice.isSupported(device),
+//                        device.getDeviceClass(), device.getDeviceSubclass(),
+//                        device.getDeviceName()));
             }
 
             for (Map.Entry<String, UsbDevice> entry : usbDevices.entrySet()) {
@@ -251,7 +251,7 @@ public class UsbService extends Service {
                 sendBroadcast(intent);
             }
         } else {
-            Log.d(TAG, "findSerialPortDevice() usbManager returned empty device list.");
+//            Log.d(TAG, "findSerialPortDevice() usbManager returned empty device list.");
             // There is no USB devices connected. Send an intent to MainActivity
             Intent intent = new Intent(ACTION_NO_USB);
             sendBroadcast(intent);
@@ -271,7 +271,7 @@ public class UsbService extends Service {
      * Request user permission. The response will be received in the BroadcastReceiver
      */
     private void requestUserPermission() {
-        Log.d(TAG, String.format("requestUserPermission(%X:%X)", device.getVendorId(), device.getProductId()));
+//        Log.d(TAG, String.format("requestUserPermission(%X:%X)", device.getVendorId(), device.getProductId()));
         PendingIntent mPendingIntent = PendingIntent.getBroadcast(this, 0, new Intent(ACTION_USB_PERMISSION), 0);
         usbManager.requestPermission(device, mPendingIntent);
     }
@@ -315,7 +315,6 @@ public class UsbService extends Service {
                         Thread.sleep(2000); // sleep some. YMMV with different chips.
                     } catch (Exception e) {
                     }
-
 
                     // Everything went as expected. Send an intent to MainActivity
                     Intent intent = new Intent(ACTION_USB_READY);

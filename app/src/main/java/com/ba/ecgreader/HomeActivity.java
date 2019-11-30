@@ -186,10 +186,6 @@ public class HomeActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             switch (intent.getAction()) {
                 case UsbService.ACTION_USB_PERMISSION_GRANTED: // USB PERMISSION GRANTED
-                    //Toast.makeText(context, "USB Ready", Toast.LENGTH_SHORT).show();
-//                    String cmd = "2n*";
-//                    if (usbService != null)
-//                        usbService.write(cmd.getBytes());
                     break;
                 case UsbService.ACTION_USB_READY: // USB Ready
                     String cmd = "2n*";
@@ -259,6 +255,7 @@ public class HomeActivity extends AppCompatActivity {
             usbService = null;
         }
     };
+
     Thread thread;
 
     public static class MyHandler extends Handler {

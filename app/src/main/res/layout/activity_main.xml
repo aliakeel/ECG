@@ -1,26 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" -->
-<!--    android:layout_height="match_parent" android:layout_width="match_parent">-->
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:orientation="vertical"
+
     >
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/chart"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
-
-    </com.github.mikephil.charting.charts.LineChart>
-
-<!--    <TextView-->
-<!--        android:scrollbars="vertical"-->
-<!--        android:id="@+id/tv"-->
+<!--    <ScrollView-->
 <!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        />-->
-</LinearLayout>
-<!--</ScrollView>-->
+<!--        android:layout_height="wrap_content">-->
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:scrollbars="vertical"-->
+<!--            android:gravity="bottom"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_gravity="bottom|center|left"-->
+<!--            >-->
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType ="fitCenter"
+
+            >
+        </com.github.mikephil.charting.charts.LineChart>
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv"
+        android:text="100 %"
+        android:scrollbars="vertical"
+        android:gravity="bottom"
+            android:layout_gravity="bottom|center|left"
+            />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_error"
+        android:text="100 %"
+        android:scrollbars="vertical"
+        android:gravity="bottom"
+        android:layout_gravity="bottom|center|right"
+        />
+
+<!--        </LinearLayout>-->
+<!--    </ScrollView>-->
+<!--    <Chronometer-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
+</FrameLayout>

@@ -8,7 +8,7 @@ public class Sync {
         // Create a list shared by producer and consumer
         // Size of list is 2.
         LinkedList<String> list = new LinkedList<>();
-        int capacity = 2500;
+        int capacity = 25000;
 
         // Function called by producer thread
         public void produce(String data) throws InterruptedException {
@@ -54,8 +54,8 @@ public class Sync {
     public static class Syncronization2 {
         // Create a list shared by producer and consumer
         // Size of list is 2.
-        LinkedList<String> list = new LinkedList<>();
-        int capacity = 2500;
+        public LinkedList<String> list = new LinkedList<>();
+        int capacity = 25000;
 
         // Function called by producer thread
         public void produce(String data) throws InterruptedException {
@@ -84,7 +84,8 @@ public class Sync {
                 // consumer thread waits while list
                 // is empty
                 while (list.size() == 0)
-                    wait();
+                    //wait();
+                    return null;
 
                 //to retrive the ifrst job in the list
                 val = list.removeFirst();
